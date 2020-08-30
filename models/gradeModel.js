@@ -8,7 +8,7 @@ const gradeSchema = new db.mongoose.Schema(
     value: { type: Number, required: true, min: 0 },
     lastModified: Date,
   },
-  { versionKey: false }
+  { versionKey: false, toJSON: { virtuals: true } }
 );
 
 const Grade = db.mongoose.model('grade', gradeSchema);
