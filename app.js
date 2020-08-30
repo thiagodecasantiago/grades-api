@@ -12,6 +12,7 @@ import { gradeRouter } from './routes/gradeRouter.js';
       useUnifiedTopology: true,
       useFindAndModify: false,
     });
+    console.log('Conexão ao BD realizada com sucesso.');
   } catch (error) {
     process.exit();
   }
@@ -33,4 +34,6 @@ app.get('/', (req, res) => {
 });
 app.use(gradeRouter);
 
-app.listen(process.env.PORT || 8081, () => {});
+app.listen(process.env.PORT || 8081, () => {
+  console.log('API em execução');
+});
